@@ -1,3 +1,10 @@
+<?php
+    require_once "utils/db_connection.php"
+
+?>
+
+
+
 <?php require "partials/header.php" ?>
 
 <main class="container">
