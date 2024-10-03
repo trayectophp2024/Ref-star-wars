@@ -15,4 +15,14 @@ function listar_todo($conn, $tabla) {
 
 }
 
+
+
+
+
+
+
+
+
+
+
 ?>

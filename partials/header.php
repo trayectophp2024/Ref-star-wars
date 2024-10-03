@@ -24,7 +24,7 @@
     <!-- HEADER -->
 
     <header class="container">
-        <nav class="navbar navbar-expand-lg bg-primary p-3" data-bs-theme="dark" >
+        <nav class="navbar navbar-expand-lg  p-3" data-bs-theme="dark"  style="background-color: #72BF78;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">IOCUS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
