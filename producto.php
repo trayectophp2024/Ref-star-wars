@@ -48,7 +48,7 @@ echo "</pre>";
                     <div class="card-body">
                         <h5 class="card-title"><?= $producto['nombre']; ?></h5>
                         <h5 class="card-title text-success">$<?= $producto['precio']; ?></h5>
-                        <a href="" class="btn btn-primary">Ver</a>
+                        <a href="producto_particular.php?categorias=<?= $tabla ?>&id=<?= $producto['id'] ?>" class="btn btn-primary">Ver</a>
                     </div>
                 </div>
             </div>

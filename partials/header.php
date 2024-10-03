@@ -50,7 +50,7 @@
                         </li>
                         
                     </ul>
-                    <form action="busqueda.php" method="POST" class="d-flex" role="search">
+                    <form action="busqueda.php" method="GET" class="d-flex" role="search">
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="fa-solid fa-magnifying-glass"></i>      
