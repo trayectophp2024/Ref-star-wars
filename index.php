@@ -1,5 +1,10 @@
 <?php
-    require_once "utils/db_connection.php"
+    require_once "utils/funciones.php";
+    require_once "utils/db_connection.php";
+
+    $productos = destacados($conn);
+
+    
 
 ?>
 
@@ -13,16 +18,20 @@
     <div class="row">
         <h1 class="text-center mt-3">DESTACADOS</h1>
 
-        <div class="col-4 mt-4 mb-4">
-            <div class="card" style="width: 18rem;">
-                <img src="img/superman.webp" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">Superman</h5>
-                    <h5 class="card-title text-success">$20.000</h5>
-                    <a href="" class="btn btn-primary">Ver</a>
+        <?php foreach ($productos as $producto) { ?>
+
+                <div class="col-4 mt-4 mb-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/<?= $producto['imagen'] ?>" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $producto['nombre'] ?></h5>
+                            <h5 class="card-title text-success">$<?= $producto['precio'] ?></h5>
+                            <a href="producto_particular.php?categorias=<?= $producto['tabla'] ?>&id=<?= $producto['id'] ?>" class="btn btn-primary">Ver</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            
+            <?php } ?>
 
     </div>
 
@@ -31,10 +40,10 @@
 
         <div class="row">
             <div class="col align-self-start">
-                <a href="" class="d-block mb-4">
+                <a href="producto.php?categoria=juegosmesa" class="d-block mb-4">
                     <img class="rounded-circle" width="200px" src="img/juegos-de-mesa-logo.webp" alt="">
                 </a>
-                <a href="" class="d-block mb-4">
+                <a href="producto.php?categoria=figuras" class="d-block mb-4">
                     <img class="rounded-circle" width="200px" src="img/figuras-logo.webp" alt="">
                 </a>
 
@@ -45,10 +54,10 @@
                 </div>
             </div>
             <div class="col align-self-end">
-                <a href="" class="d-block mb-4">
+                <a href="producto.php?categoria=monopatin" class="d-block mb-4">
                     <img class="rounded-circle" width="200px" src="img/monopatin-logo.jpg" alt="">
                 </a>
-                <a href="" class="d-block mb-4">
+                <a href="producto.php?categoria=figuras" class="d-block mb-4">
                     <img class="rounded-circle" width="200px" src="img/figuras-logo.webp" alt="">
                 </a>
             </div>

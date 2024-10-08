@@ -68,6 +68,38 @@ function categoria_particular($conn, $tabla, $id){
 }   
 
 
+/* Destacados */
+
+function destacados($conn){
+  
+
+   // Consultas para buscar en la figuras
+   $sqlFiguras = "SELECT 'figuras' as tabla, id, nombre, descripcion, precio, imagen,destacado, id_edad FROM figuras
+      WHERE destacado = 1 ";
+
+   // Consultas para buscar en la Monopatin
+   $sqlMonopatin = "SELECT 'monopatin' as tabla, id, nombre, descripcion, precio, imagen,destacado, id_edad FROM monopatin
+      WHERE destacado = 1 ";
+
+   // Consultas para buscar en la Juegos de mesa
+   $sqlJuegosMesa = "SELECT 'juegosmesa' as tabla, id, nombre, descripcion, precio, imagen,destacado, id_edad FROM juegosmesa
+      WHERE destacado = 1  ";
+
+   //Ejecutar la consulta y convertir en un array asociativo
+   $resultFiguras = $conn->query($sqlFiguras)->fetch_all(MYSQLI_ASSOC);
+   $resultMonopatin = $conn->query($sqlMonopatin)->fetch_all(MYSQLI_ASSOC);
+   $resultJuegosMesa = $conn->query($sqlJuegosMesa)->fetch_all(MYSQLI_ASSOC);
+
+   //Combinar los resultados de las tres tablas 
+
+   $resultado = array_merge($resultFiguras, $resultMonopatin, $resultJuegosMesa);
+
+   return $resultado;
+
+   
+
+
+}   
 
 
 

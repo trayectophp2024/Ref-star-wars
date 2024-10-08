@@ -28,13 +28,17 @@ if ($termino_busqueda) {
                         <div class="card-body">
                             <h5 class="card-title"><?= $producto['nombre'] ?></h5>
                             <h5 class="card-title text-success">$<?= $producto['precio'] ?></h5>
-                            <a href="" class="btn btn-primary">Ver</a>
+                            <a href="producto_particular.php?categorias=<?= $producto['tabla'] ?>&id=<?= $producto['id'] ?>" class="btn btn-primary">Ver</a>
                         </div>
                     </div>
                 </div>
             <?php } ?>
         </div>
 
+    <?php } elseif ($termino_busqueda) { ?>
+            <p class="text-center text-warning fs-3">No se encontraron productos para el termino de busqueda: <?= $termino_busqueda ?></p>
+    <?php }else {  ?>|1
+        <p class="text-center text-danger fs-3">El campo de busqueda no puede estar vacio </p>
     <?php } ?>
 
 </main>
